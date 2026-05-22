@@ -44,6 +44,52 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
+   DARK MODE TOKENS
+   ───────────────────────────────────────────────────────────── */
+body.dark {
+  --bg:           #0f1117;
+  --surface:      #1a1d27;
+  --surface-2:    #22263a;
+  --border:       #2e3350;
+  --border-light: rgba(255,255,255,0.06);
+
+  --text:          #f1f5f9;
+  --text-secondary:#cbd5e1;
+  --text-muted:    #94a3b8;
+
+  --accent:       #818cf8;
+  --accent-dark:  #6366f1;
+  --accent-light: #1e1f3a;
+  --accent-glow:  rgba(129,140,248,0.25);
+
+  --conference-bg: #0c2340;
+  --workshop-bg:   #1e1040;
+  --patent-bg:     #052e1c;
+  --review-bg:     #2a1800;
+  --oral-bg:       #2a1e00;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.2);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.45), 0 4px 12px rgba(0,0,0,0.3);
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark .hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 110% 10%, rgba(129,140,248,0.11) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at -10% 90%, rgba(6,182,212,0.07) 0%, transparent 60%),
+    var(--bg);
+}
+body.dark .hero::before { opacity: 0.12; }
+body.dark #navbar { background: rgba(15,17,23,0.85); }
+body.dark .award-badge { background: #2a1e00; color: #fbbf24; border-color: #78450a; }
+body.dark .project-status.ongoing { background: #0c2340; color: #38bdf8; border-color: #0369a1; }
+body.dark .project-status.under-review { background: #2a1800; color: #fbbf24; border-color: #92400e; }
+body.dark .nav-links { background: rgba(15,17,23,0.97); }
+
+/* ─────────────────────────────────────────────────────────────
    RESET & BASE
    ───────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -77,8 +123,9 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1.5rem;
 }
+.nav-inner > a:first-child { flex: 1; }
 
 .nav-brand {
   font-size: 0.95rem;
@@ -137,6 +184,26 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
   border-radius: var(--r-sm);
 }
 .nav-toggle:hover { background: var(--surface); }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: 2.5px solid var(--border);
+  border-radius: var(--r-full);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color var(--t) var(--ease), border-color var(--t) var(--ease), background var(--t) var(--ease);
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
 
 /* ─────────────────────────────────────────────────────────────
    HERO
@@ -225,7 +292,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
   font-size: 1rem;
   line-height: 1.78;
   color: var(--text-secondary);
-  max-width: 510px;
+  max-width: 700px;
   margin-bottom: 0.875rem;
 }
 .hero-bio strong { color: var(--text); font-weight: 600; }
@@ -312,8 +379,8 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
   gap: 1.25rem;
 }
 .avatar-ring {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   padding: 3px;
   background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
@@ -353,27 +420,33 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + 8px); }
 
 .photo-social {
   display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-top: 0.75rem;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 1rem;
 }
 .photo-social a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
+  gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
   color: var(--text-muted);
-  font-size: 1rem;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  font-size: 0.83rem;
+  font-weight: 500;
   text-decoration: none;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.photo-social a i {
+  width: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 .photo-social a:hover {
   color: var(--accent);
   border-color: var(--accent);
-  background: rgba(99,102,241,0.07);
+  background: var(--accent-light);
 }
 
 /* ─────────────────────────────────────────────────────────────

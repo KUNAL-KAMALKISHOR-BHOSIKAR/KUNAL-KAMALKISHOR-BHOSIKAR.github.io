@@ -1,3 +1,22 @@
+/* ── Dark / light mode toggle ── */
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon   = themeToggle.querySelector('i');
+
+const applyTheme = (dark) => {
+  document.body.classList.toggle('dark', dark);
+  themeIcon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+};
+
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const saved = localStorage.getItem('theme');
+applyTheme(saved ? saved === 'dark' : prefersDark);
+
+themeToggle.addEventListener('click', () => {
+  const dark = !document.body.classList.contains('dark');
+  applyTheme(dark);
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+});
+
 /* ── Navbar shadow on scroll ── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {

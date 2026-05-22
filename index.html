@@ -9,7 +9,7 @@
   <meta property="og:description" content="MS Research at IIIT Hyderabad. 4 publications at CVPR, WACV, and BMVC. Collaborating with MPI, ETH Zürich, Tufts, TU Darmstadt, and HKU.">
   <meta property="og:image"       content="images/Photo.jpeg">
 
-  <link rel="icon"             href="images/favicon.ico">
+  <link rel="icon"             href="images/favicon.png" width="64" height="64">
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,9 +28,6 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about"        class="nav-link">About</a></li>
         <li><a href="#news"         class="nav-link">News</a></li>
@@ -43,6 +40,12 @@
           </a>
         </li>
       </ul>
+      <button id="themeToggle" aria-label="Toggle dark mode" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </nav>
 
@@ -69,26 +72,20 @@
           </p>
 
           <p class="hero-bio">
-            I am interested in building models for <strong>physically grounded human behaviour and interaction in 3D</strong>
-            environments, spanning human-scene contact, grasp-aware motion synthesis, and digital
-            human simulation. My work also explores geometry processing, 3D reconstruction, and
-            robustness of generative pipelines, including adversarial attacks in multi-view systems.
-            I have experience developing both datasets and learning-based methods, evaluated on real-world benchmarks
-            and applied to <strong>AR/VR</strong> and <strong>embodied AI</strong> applications.
+            My research lies at the intersection of 3D computer vision, computer graphics, and digital humans. I am broadly interested in modeling physically plausible human behavior and interaction in 3D environments, including human-scene interaction, grasp-aware motion synthesis, co-speech gesture generation, scene-aware human motion planning, hand-hair interaction, and digital human simulation. I also work on geometry processing, 3D reconstruction, neural rendering, and the robustness of generative 3D/4D pipelines. My work focuses on applications in AR/VR, embodied AI, and virtual humans.
           </p>
 
           <p class="hero-bio">
-            <!-- I collaborate with researchers at <strong>MPI</strong>, <strong>ETH Zürich</strong>,
-            <strong>Tufts University</strong>, <strong>TU Darmstadt</strong>, and <strong>HKU</strong>. -->
-            I am actively looking for <strong>PhD positions</strong> in 3D computer vision,
-            graphics, and human-centric AI.
+            I am actively looking for <strong>PhD positions</strong> in 3D computer vision, graphics, and digital humans.
           </p>
 
           <div class="hero-tags">
             <span class="tag">Digital Humans</span>
-            <span class="tag">Human-Centric AI</span>
+            <!-- <span class="tag">Human-Centric AI</span> -->
             <span class="tag">Human–Scene Interaction</span>
+            <span class="tag">Fine-grained Human Interaction</span>
             <span class="tag">Motion &amp; Gesture Generation</span>
+            <span class="tag">Scene-Aware Motion Planning</span>
             <span class="tag">Neural Rendering</span>
             <span class="tag">Geometry Processing</span>
             <span class="tag">Robustness of 3D/4D Generative Models</span>
@@ -101,14 +98,18 @@
             <img src="images/Photo.jpeg" alt="Kunal Bhosikar" width="200" height="200">
           </div>
           <div class="photo-social">
-            <a href="https://scholar.google.com/citations?user=VyTaLmsAAAAJ&hl=en"
-               title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-            <a href="https://github.com/KUNAL-KAMALKISHOR-BHOSIKAR"
-               title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-            <a href="mailto:kunalbhosikar@gmail.com"
-               title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/kunal-bhosikar-15079b209/"
-               title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://scholar.google.com/citations?user=VyTaLmsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+              <i class="ai ai-google-scholar"></i><span>Google Scholar</span>
+            </a>
+            <a href="https://github.com/KUNAL-KAMALKISHOR-BHOSIKAR" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i><span>GitHub</span>
+            </a>
+            <a href="mailto:kunalbhosikar@gmail.com">
+              <i class="fas fa-envelope"></i><span>Email</span>
+            </a>
+            <a href="https://www.linkedin.com/in/kunal-bhosikar-15079b209/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+            </a>
           </div>
         </div>
 
@@ -564,8 +565,7 @@
               </div>
               <ul class="timeline-bullets">
                 <li>
-                  Developed a fast quadric-based mesh simplification framework for
-                  large-scale VR scenes with geometry and appearance preservation.
+                  Worked under <strong>Dr. Lokender Tiwari</strong>. Developed a fast quadric-based mesh simplification framework for large-scale VR scenes with geometry and appearance preservation.
                 </li>
                 <li>
                   Designed curvature-aware boundary handling and texture-preserving
